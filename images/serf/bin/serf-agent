@@ -1,0 +1,7 @@
+#!/bin/bash
+if [[ -n "$SERF_HOST" ] && [ -n "$SERF_PORT" ]]
+then
+	serf agent -role serf-agent -join $SERF_HOST:$SERF_PORT
+else
+	serf agent -role serf-agent
+endif
